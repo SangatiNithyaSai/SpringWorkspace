@@ -58,7 +58,11 @@ public class DoctorController {
 	 @GetMapping("/login/correctid")
 	 public ModelAndView doctorlogin(@RequestParam(value="doc_name",required=false)String doc_name,@RequestParam(value="doc_field",required=false)String doc_field){
 		 Doctor d=doctorrepo.findDoctorBynameAndField(doc_name,doc_field);
-		Set<Patient>patients=d.getPatient();
+		
+		if(d==null) {
+			return new ModelAndView("incorrectcredentials","nobody",d);
+		}
+		Set<Patient> patients=d.getPatient();
 	  
 		 return new ModelAndView("doctorpatients","patlist",patients);
 		 

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<tr th:each="patient: ${patlist}">
+    <td th:text="${patient.id}" />
+    <td th:text="${patient.name}" />
+    <td th:number="${patient.age}" />
+    <td th:text="${patient.ph_no}" />
+    <td th:text="${patient.place}" />
+    
+</tr>
+
+
+</body>
+</html>

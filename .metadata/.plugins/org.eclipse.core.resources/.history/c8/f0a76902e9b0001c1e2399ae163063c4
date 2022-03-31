@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table>
+
+  <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mobile</th>
+        <th>Place</th>
+        </thead>
+        <body>
+
+<tr th:each="patient: ${patlist}">
+    <td th:text="${patient.id}" />
+    <td th:text="${patient.name}" />
+    <td th:number="${patient.age}" />
+    <td th:text="${patient.ph_no}" />
+    <td th:text="${patient.place}" />
+    
+</tr>
+</body>
+</table>
+
+  <button onclick="myFunction()">Go BACK</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/doctor/login")
+}
+</script>
+
+</body>
+</html>

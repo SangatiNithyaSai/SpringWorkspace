@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Your Doctor is</h2>
+
+<tr >
+    <td th:text="${doctor.id}" />
+    <td th:text="${doctor.name}" />
+    <td th:text="${doctor.field}" />
+    
+</tr>
+
+
+</body>
+</html>

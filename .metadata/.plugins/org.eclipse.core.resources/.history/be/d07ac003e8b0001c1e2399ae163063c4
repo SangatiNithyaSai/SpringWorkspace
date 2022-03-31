@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<tr >
+    <td th:text="${pat.id}" />
+    <td th:text="${pat.name}" />
+    <td th:number="${pat.age}" />
+    <td th:text="${pat.ph_no}" />
+    <td th:text="${pat.place}" />
+    <td th:text="${pat.doctor}"/>
+    
+</tr>
+
+
+</body>
+</html>
