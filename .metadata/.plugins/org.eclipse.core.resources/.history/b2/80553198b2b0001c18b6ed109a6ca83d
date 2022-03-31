@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Appointing Doctors</title>
+</head>
+<body>
+  <h1>Enter the details</h1>
+  <form action="#" th:action="@{/HospitalManagement/doctor/savedoctor}" th:object="${doc}" method="post">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" th:field="*{name}" placeholder="Enter Doctor Name"/></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input type="number" th:field="*{age}" placeholder="Enter Doctor's Age"/></td>
+      </tr>
+      <tr>
+        <td>Field</td>
+        <td><input type="text" th:field="*{field}" placeholder="Enter Doctor's Field"/></td>
+      </tr>
+       <tr>
+        <td>Experience:</td>
+        <td><input type="number" th:field="*{exp_in_years}" placeholder="Enter Doctor's Experience"/></td>
+      </tr>
+      <tr>
+        <td><button type="submit">Submit</button></td>
+      </tr>
+    </table>
+  </form>
+  <hr>
+     <button onclick="myFunction()">Go Back</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/adminoperation")
+}
+</script>
+  
+</body>
+</html>

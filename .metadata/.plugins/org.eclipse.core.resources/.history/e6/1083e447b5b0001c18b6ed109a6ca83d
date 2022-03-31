@@ -1,0 +1,56 @@
+package com.example.api.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.example.api.beans.Doctor;
+import com.example.api.beans.Idmapping;
+import com.example.api.beans.Patient;
+import com.example.api.repository.DoctorRepo;
+import com.example.api.repository.PatientRepo;
+
+@Controller
+@RequestMapping("/HospitalManagement/")
+public class HospitalController {
+	
+	@Autowired
+	 DoctorRepo doctorrepo;
+	@Autowired
+	 PatientRepo patientrepo;
+	
+	@GetMapping("/")
+	public String getHome() {
+		return "home";
+	}
+	@GetMapping("/admin")
+	public String adminLogin() {
+		return "adminlogin";
+	}
+	
+	@GetMapping("/adminoperation")
+	public String adminOperations(){
+		return "adminoperation";
+	}
+	@GetMapping("/admin/fixappointment")
+	public ModelAndView fixappointment() {
+      Idmapping idmaps=new Idmapping();
+	return new ModelAndView("mappingform","ids",idmaps);
+	}
+	@PostMapping("/admin/saveappointment")
+	public String saveAppointment(@ModelAttribute("ids")Idmapping ids) {
+		Patient p=patientrepo.findById(ids.getPat_id()).get();
+		Doctor doctor=doctorrepo.findById(ids.getDoc_id()).get();
+		p.setDoctor(doctor);
+		return null;
+	}
+	
+	
+
+}

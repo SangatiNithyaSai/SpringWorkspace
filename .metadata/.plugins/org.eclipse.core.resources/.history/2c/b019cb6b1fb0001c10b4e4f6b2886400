@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p><h1>Details of all the Doctors in the Hospital</h1></p>
+  
+  
+  <h1>Doctor Details</h1>
+  <table>
+
+    <tr th:each="doc: ${doctors}">
+
+    <tr><td th:text="'Doctor Name: ' + ${doc.name}"></td> </tr>
+    <tr><td th:text="'Doctor Age: ' + ${doc.age}"></td> </tr>
+    <tr><td th:text="'Doctors Specialization Field : ' + ${doc.field}"></td> </tr>
+    <tr><td th:text="'Doctor Experience: ' + ${doc.exp_in_years}"></td> </tr>
+  </table>
+
+    </tr>
+  
+   <button onclick="myFunction()">Home Page</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/")
+}
+</script>
+  
+
+</body>
+</html>

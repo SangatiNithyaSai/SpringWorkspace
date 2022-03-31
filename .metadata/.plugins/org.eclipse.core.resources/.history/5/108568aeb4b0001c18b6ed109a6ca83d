@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Appointing Doctors</title>
+</head>
+<body>
+  <h1>Enter the ids to Map</h1>
+  <form action="#" th:action="@{/HospitalManagement/admin/saveappointment}" method="post">
+    <table>
+      <tr>
+        <td>Pat_id:</td>
+        <td><input type="text" th:field="${pat_id}" placeholder="Enter Patient_id"/></td>
+      </tr>
+      <tr>
+        <td>Doc_id</td>
+        <td><input type="number" th:field="${doc_id}" placeholder="Enter Doctor_id"/></td>
+      </tr>
+      <tr>
+        <td><button type="submit">Submit</button></td>
+      </tr>
+    </table>
+  </form>
+  <hr>
+     <button onclick="myFunction()">Go Back</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/adminoperation")
+}
+</script>
+  
+</body>
+</html>

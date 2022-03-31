@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <h1>User Details</h1>
+  <table>
+    <tr><td th:text="'First Name: ' + ${user.firstName}"></td> </tr>
+    <tr><td th:text="'Last Name: ' + ${user.lastName}"></td> </tr>
+    <tr><td th:text="'Email: ' + ${user.email}"></td> </tr>
+  </table>
+</body>
+</html>

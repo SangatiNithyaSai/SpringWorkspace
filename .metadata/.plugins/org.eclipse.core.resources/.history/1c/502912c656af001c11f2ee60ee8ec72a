@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center><h1>Hospital Home Page</h1></center>
+
+<nav>
+<a th:action=@{/patient}>Patient login</a> |
+<a >Book Appointment</a> |
+<a >Doctor login</a> |
+<a >Admin login</a>
+</nav>
+
+</body>
+</html>

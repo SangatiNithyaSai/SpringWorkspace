@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center><h1>Hospital Doctor Login</h1></center>
+
+
+<script>
+function user1() {
+	  var user = document.getElementById('username').value
+	  var pass = document.getElementById('password').value
+	  
+	  if (user == "doctor" && pass == "login") {
+		  var url="http://localhost:8081/HospitalManagement/doctor/appointments/ ".concat(user)
+	    window.open(url)
+	  } else {
+	    alert('incorrect username or password')
+	  }
+	}
+</script>
+<form>
+  <input type="text" name="username" id="username" Placeholder="enter doctor name"><br>
+  <input type="password" name="password" id="password" Placeholder="enter field"><br>
+  <button onclick="user1()">Submit</button>
+</form>
+</body>
+</html>

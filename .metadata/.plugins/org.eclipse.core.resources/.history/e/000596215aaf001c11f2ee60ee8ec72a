@@ -1,0 +1,29 @@
+package com.example.api.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.example.api.beans.Doctor;
+import com.example.api.repository.DoctorRepo;
+
+public class DoctorController {
+	@Autowired
+	 DoctorRepo doctorrepo;
+	
+	 
+	 @PostMapping("/savedoctor")
+	 public String newPatient(@ModelAttribute("doc") Doctor doctor ) {
+		 doctorrepo.save(doctor);
+		 return "redirect:/registerDoctor";
+	 }
+	
+	 @GetMapping("/registerDoctor")
+	 public ModelAndView addDoctor() {
+		 Doctor d1=new Doctor();
+		return new ModelAndView("newdoctor","doc",d1);	 
+	 }
+
+}

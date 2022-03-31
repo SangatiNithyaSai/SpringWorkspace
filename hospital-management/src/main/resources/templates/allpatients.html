@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p><h1>Appointment Booked Patient Details </h1></p>
+  
+  
+  <h1>Details</h1>
+  <table>
+  <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>ph_no</th>
+        <th>place</th>
+        </thead>
+        <body>
+   <tr th:each="pat:${patients}">
+   <td th:text="${pat.id}"/>
+    <td th:text="${pat.name}"></td> 
+    <td th:text="${pat.age}"></td> 
+    <td th:text="${pat.ph_no}"></td> 
+    <td th:text="${pat.place}"></td> 
+    </tr>
+    </table>
+    </body>
+  </table>
+
+    
+  
+   <button onclick="myFunction()">Go BACK</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/adminoperation")
+}
+</script>
+  
+
+</body>
+</html>

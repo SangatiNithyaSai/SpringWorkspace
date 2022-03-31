@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center><h1>Admin Operations</h1></center>
+
+
+<button onclick="myFunction()">View Doctors List</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/doctor/alldoctors")
+}
+</script>
+<button onclick="myFunction1()">View Patient List</button>
+<script>
+function myFunction1() {
+  location.replace("/HospitalManagement/patient/allpatients")
+}
+</script>
+
+<button onclick="myFunction2()">Update Doctor Table</button>
+<script>
+function myFunction2() {
+  location.replace("/HospitalManagement/doctor/registerDoctor")
+}
+</script>
+
+<button onclick="myFunction3()">Fix Appointments</button>
+<script>
+function myFunction3() {
+  location.replace("/HospitalManagement/admin/fixappointment")
+}
+</script>
+
+<button onclick="myFunction3()">Go to Home</button>
+<script>
+function myFunction3() {
+  location.replace("/HospitalManagement/")
+}
+</script>
+
+
+</body>
+</html>

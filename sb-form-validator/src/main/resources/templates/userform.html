@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Spring Boot form validation</title>
+<link rel="stylesheet" th:href="@{static/css/style.css}"/>
+</head>
+<body>
+  <h1>User Registration Form</h1>
+  <form action="#" th:action="@{/showUser}" th:object="${user}" method="post">
+    <table>
+      <tr>
+        <td>First Name:</td>
+        <td><input type="text" th:field="*{firstName}" placeholder="Enter First Name"/></td>
+        <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"></td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td><input type="text" th:field="*{lastName}" placeholder="Enter Last Name"/></td>
+        <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" th:field="*{email}" placeholder="email"/></td>
+        <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></td>
+      </tr>
+      <tr>
+        <td><button type="submit">Submit</button></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

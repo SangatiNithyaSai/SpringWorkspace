@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<tr th:each="patient: ${patlist}">
+    <td th:text="${patient.id}" />
+    <td th:text="${patient.name}" />
+    <td th:number="${#numbers.formatDecimal(patient.age,1,3)" />
+    <td th:text="${#numbers.formatDecimal(patient.ph_no,6,9)}" />
+    <td th:text="${patient.place}" />
+    
+</tr>
+
+
+</body>
+</html>

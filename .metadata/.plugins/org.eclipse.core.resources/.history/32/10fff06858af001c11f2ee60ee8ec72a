@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center><h1>Hospital Home Page</h1></center>
+
+
+<button onclick="myFunction()">Patient Login</button>
+<script>
+function myFunction() {
+  location.replace("/patient")
+}
+</script>
+<nav>
+<a window.location.href = "http:localhost:8081//HospitalManagement/patient">Patient login</a> |
+<a >Book Appointment</a> |
+<a >Doctor login</a> |
+<a >Admin login</a>
+</nav>
+
+</body>
+</html>

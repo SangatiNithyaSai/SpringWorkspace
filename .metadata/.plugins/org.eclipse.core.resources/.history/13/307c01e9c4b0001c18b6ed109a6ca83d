@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center><h1>Hospital Doctor Login</h1></center>
+
+<form  th:action="@{/HospitalManagement/doctor/login}">
+<table>
+      <tr >
+        <td>UserName:</td>
+        <td><input type="text" th:name="doc_name"  placeholder="Enter Name"/></td>
+      </tr>
+      <tr >
+        <td>Field</td>
+        <td><input type="text" th:name="doc_field"  placeholder="Enter Password"/></td>
+      </tr>
+      <tr>
+      <button type="submit">Submit</button>   
+ </tr>
+
+  </table>
+  </form>
+
+
+ <button onclick="myFunction()">Home Page</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/")
+}
+</script>
+</body>
+</html>

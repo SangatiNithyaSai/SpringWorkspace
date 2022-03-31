@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p><h1>Doctor is added</h1></p>
+  
+  
+  <h1>Doctor Details</h1>
+  <table>
+    <tr><td th:text="'Doctor Name: ' + ${doc.name}"></td> </tr>
+    <tr><td th:text="'Doctor Age: ' + ${doc.age}"></td> </tr>
+    <tr><td th:text="'Field: ' + ${doc.field}"></td> </tr>
+  </table>
+  
+   <button onclick="myFunction()">Go to Admin operations</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/adminoperation")
+}
+</script>
+  
+
+</body>
+</html>

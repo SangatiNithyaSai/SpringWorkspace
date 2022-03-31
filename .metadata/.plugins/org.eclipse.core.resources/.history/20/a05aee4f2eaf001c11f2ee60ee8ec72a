@@ -1,0 +1,17 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<html>
+<title>Patient Record Entry</title>
+<h1>Add Patient</h1>
+  
+  <form:form modelAttribute="pat">
+  <div>
+  <form:label path="name">Name</form:label>
+  <form:input path="name"/>
+    
+  </div>
+  
+  
+  </form:form>
+  
+</html>

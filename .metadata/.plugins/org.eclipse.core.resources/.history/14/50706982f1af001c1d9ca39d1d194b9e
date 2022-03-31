@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<center><h1>Hospital Admin Login</h1></center>
+
+
+<script>
+function user1() {
+	  var user = document.getElementById('username').value
+	  var pass = document.getElementById('password').value
+	  if (user == "admin" && pass == "root") {
+	    window.open("/")
+	    alert('correct username')
+	  } else {
+	    alert('incorrect username or password')
+	  }
+	}
+</script>
+<form>
+  <input type="text" name="username" id="username" Placeholder="enter username"><br>
+  <input type="password" name="password" id="password" Placeholder="enter password"><br>
+  <button onclick="user1()">Submit</button>
+</form>
+</body>
+</html>

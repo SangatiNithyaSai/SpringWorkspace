@@ -1,0 +1,30 @@
+package com.example.api.beans;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Doctor {
+ private int id;
+ public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public Patient getPatient() {
+	return patient;
+}
+public void setPatient(Patient patient) {
+	this.patient = patient;
+}
+private String name;
+ private Patient patient;
+ 
+ 
+}

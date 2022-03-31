@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Patient Registration</title>
+</head>
+<body>
+  <h1>Registration Form</h1>
+  <form action="#" th:action="@{/save}" th:object="${pat}" method="post">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" th:field="*{name}" placeholder="Enter Patient Name"/></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input type="number" th:field="*{age}" placeholder="Enter Patient Age"/></td>
+      </tr>
+      <tr>
+        <td>Place:</td>
+        <td><input type="text" th:field="*{place}" placeholder="Enter Patient Place"/></td>
+      </tr>
+       <tr>
+        <td>Pin:</td>
+        <td><input type="text" th:field="*{pincode}" placeholder="Enter Pincode"/></td>
+      </tr>
+       <tr>
+        <td>Mobile Number:</td>
+        <td><input type="number" th:field="*{ph_no}" placeholder="Enter Patient Mobile Number"/></td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="email" th:field="*{email}" placeholder="Enter patient email"/></td>
+      </tr>
+      <tr>
+        <td><button type="submit">Submit</button></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>

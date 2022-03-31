@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p><h1>Details of all the Doctors in the Hospital</h1></p>
+  
+  
+  <h1>Doctor Details</h1>
+  <table>
+  <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Field</th>
+        <th>Experience in Field</th>
+        </thead>
+        <body>
+   <tr th:each="doc:${doctors}">
+   <td th:text="${doc.id}"/>
+    <td th:text="${doc.name}"></td> 
+    <td th:text="${doc.age}"></td> 
+    <td th:text="${doc.field}"></td> 
+    <td th:text="${doc.exp_in_years}"></td> </tr>
+    
+    </table>
+    </body>
+  </table>
+
+<hr>
+<form>
+<table>
+      <tr action="#" >
+        <td>Doc_id:</td>
+        <td><input type="text"  id="docid" placeholder="Enter id to delete"/></td>
+      </tr>
+      <tr>
+      <button onclick="myfun1()">Delete Doctor</button>
+      <script>
+function myfun1() {
+		var docid=document.getElemnetById("docid")
+		var url="HospitalManagement/admin/deletedoc/".concat(docid)
+  location.replace(url)
+}
+</script>
+      
+ </tr>
+
+  </table>
+  </form>
+ 
+  
+   <button onclick="myFunction()">Go BACK</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/adminoperation")
+}
+</script>
+  
+
+</body>
+</html>
