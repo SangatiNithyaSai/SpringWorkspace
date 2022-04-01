@@ -1,6 +1,7 @@
 package com.example.api.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,17 +52,27 @@ public class HospitalController {
 	@PostMapping("/admin/saveappointment")
 	public ModelAndView saveAppointment(@ModelAttribute("ids")Idmapping ids) {
 		Patient p=patientrepo.findById(ids.getPat_id()).get();
+		if(p.getDoctor()==null) {
 		Doctor doctor=doctorrepo.findById(ids.getDoc_id()).get();
 		doctor.getPatient().add(p);
 		p.setDoctor(doctor);
-		
-		patientrepo.save(p);
+		patientrepo.save(p);}
+		else {
+			return new ModelAndView("appointmentfailure","pat",p);
+		}
 		return new ModelAndView("appointmentsuccess","pat",p);
 	}
 	
 	@GetMapping("/admin/deletedoc")
 	public ModelAndView deleteDoc(@RequestParam(value="doc_id",required=false)String doc_id){
 		int doc=Integer.valueOf(doc_id);
+		Doctor d=doctorrepo.getById(doc);
+		Set<Patient> patients=d.getPatient();
+		for(Patient p:patients) {
+			p.setDoctor(null);
+			patientrepo.save(p);
+		}
+		  
 		doctorrepo.deleteById(doc);
          System.out.println("deleted");
 		 List<Doctor> doctors=doctorrepo.findAll();

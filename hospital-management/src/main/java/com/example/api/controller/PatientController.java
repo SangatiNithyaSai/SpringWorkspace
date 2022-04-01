@@ -45,6 +45,9 @@ public class PatientController {
 			return new ModelAndView("incorrectcredentials","nobody",p);
 		}
 	     Doctor d=p.getDoctor();
+	     if(d==null) {
+	    	 return new ModelAndView("nodoctor","pat",p);
+	     }
 		 return new ModelAndView("patientdetails","doctor",d);
 		 
 	 }

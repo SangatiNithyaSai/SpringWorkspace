@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2 th:text="${pat.name}">Sorry! Doctor hasn't been appointed for you yet.</h2>
+
+
+</body>
+</html>

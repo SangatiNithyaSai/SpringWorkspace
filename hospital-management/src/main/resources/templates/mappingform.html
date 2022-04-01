@@ -9,11 +9,11 @@
   <form action="#" th:action="@{/HospitalManagement/admin/saveappointment}" th:object="${ids}"method="post">
     <table>
       <tr>
-        <td>Pat_id:</td>
+        <td>Patient_id:</td>
         <td><input type="text" th:field="${ids.pat_id}" placeholder="Enter Patient_id"/></td>
       </tr>
       <tr>
-        <td>Doc_id</td>
+        <td>Doctor_id</td>
         <td><input type="number" th:field="${ids.doc_id}" placeholder="Enter Doctor_id"/></td>
       </tr>
       <tr>

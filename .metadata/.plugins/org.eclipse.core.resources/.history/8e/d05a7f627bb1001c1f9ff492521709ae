@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Your Patients are</h2>
+<table>
+
+  <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Mobile</th>
+        <th>Place</th>
+        </thead>
+        <body>
+
+<tr th:each="patient: ${patlist}">
+    <td th:text="${patient.id}" />
+    <td th:text="${patient.name}" />
+    <td th:number="${patient.age}" />
+    <td th:text="${patient.ph_no}" />
+    <td th:text="${patient.place}" />
+    
+</tr>
+</body>
+</table>
+<hr>
+
+<form  th:action="@{/HospitalManagement/admin/deletedoc}">
+<table>
+     <h3>Enter Patient Id to remove from your AppointmentList.</h3>
+      <tr >
+        <td>Patient_id:</td>
+        <td><input type="text" th:name="pat_id"  placeholder="Enter id to delete"/></td>
+      </tr>
+      <tr>
+      <td>
+      <button type="submit">Delete Doctor</button>   
+      </td>
+ </tr>
+
+  </table>
+  </form>
+
+
+  <button onclick="myFunction()">Go BACK</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/doctor/login")
+}
+</script>
+
+</body>
+</html>

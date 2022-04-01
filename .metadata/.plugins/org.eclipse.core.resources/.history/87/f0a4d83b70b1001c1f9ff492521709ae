@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+alert("Patient has been already assigned to another doctor")
+</script>
+
+<h2>Doctor Details</h2>
+<table>
+<tr>
+<td>th:text="${pat.doctor}"</td>
+</tr>
+</table>
+<button onclick="myFunction()">Go back</button>
+<script>
+function myFunction() {
+  location.replace("/HospitalManagement/adminoperation")
+}
+</script>
+</body>
+</html>

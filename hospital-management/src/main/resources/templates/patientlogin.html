@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<center><h1>Hospital Doctor Login</h1></center>
+<center><h1>Hospital Patient Login</h1></center>
 
 <form  th:action="@{/HospitalManagement/patient/login/correctid}">
 <table>
@@ -11,11 +11,13 @@
         <td><input type="text" th:name="pat_name"  placeholder="Enter Name"/></td>
       </tr>
       <tr >
-        <td>Field</td>
+        <td>Location:</td>
         <td><input type="text" th:name="pat_place"  placeholder="Enter Password"/></td>
       </tr>
       <tr>
-      <button type="submit">Submit</button>   
+      <td>
+      <button type="submit">Submit</button> 
+      </td>  
  </tr>
 
   </table>

@@ -67,5 +67,14 @@ public class DoctorController {
 		 return new ModelAndView("doctorpatients","patlist",patients);
 		 
 	 }
+	 
+	 @GetMapping("/deletepat")
+		public String deleteDoc(@RequestParam(value="pat_id",required=false)String pat_id){
+			int pat=Integer.valueOf(pat_id);
+			Patient p=patientrepo.getById(pat);
+			p.setDoctor(null);
+           patientrepo.save(p);
+		return "successdeletion";			
+		}
 			
 }

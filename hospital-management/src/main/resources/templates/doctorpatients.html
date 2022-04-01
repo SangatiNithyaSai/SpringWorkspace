@@ -23,6 +23,24 @@
 </tr>
 </body>
 </table>
+<hr>
+
+<form  th:action="@{/HospitalManagement/doctor/deletepat}">
+<table>
+     <h3>Enter Patient Id to remove from your AppointmentList.</h3>
+      <tr >
+        <td>Patient_id:</td>
+        <td><input type="text" th:name="pat_id"  placeholder="Enter id to delete"/></td>
+      </tr>
+      <tr>
+      <td>
+      <button type="submit">Delete Patient</button>   
+      </td>
+ </tr>
+
+  </table>
+  </form>
+
 
   <button onclick="myFunction()">Go BACK</button>
 <script>
